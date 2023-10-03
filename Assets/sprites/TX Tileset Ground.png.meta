@@ -1,19 +1,34 @@
 fileFormatVersion: 2
-guid: 78a5912904dd3b84ea828d5cd301cbaa
+guid: 99de884407c969b4d8543735df7f7ea3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7293459347660958784
-    second: warrior attack 1_0
+      213: 8652677587666043219
+    second: TX Tileset Ground_0
   - first:
-      213: 5468760121152822927
-    second: warrior attack 1_1
+      213: -7190719572971877601
+    second: TX Tileset Ground_1
   - first:
-      213: 7767576306782480720
-    second: warrior attack 1_2
+      213: 3994209854681936717
+    second: TX Tileset Ground_2
   - first:
-      213: 574626949871616260
-    second: warrior attack 1_3
+      213: -6045269988124551188
+    second: TX Tileset Ground_3
+  - first:
+      213: -8333202958171376367
+    second: TX Tileset Ground_4
+  - first:
+      213: -1729818555723472959
+    second: TX Tileset Ground_5
+  - first:
+      213: -2094381130127968046
+    second: TX Tileset Ground_6
+  - first:
+      213: 1847422516908647653
+    second: TX Tileset Ground_7
+  - first:
+      213: -5568849602974404179
+    second: TX Tileset Ground_8
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -167,85 +182,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: warrior attack 1_0
+      name: TX Tileset Ground_0
       rect:
         serializedVersion: 2
-        x: 744
-        y: 472
-        width: 57
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 416
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 04c651162a2973560800000000000000
-      internalID: 7293459347660958784
+      spriteID: fa63c2cd55f0d24429b71d76d6eef560
+      internalID: 904875089
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warrior attack 1_1
+      name: TX Tileset Ground_1
       rect:
         serializedVersion: 2
-        x: 897
-        y: 472
-        width: 57
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 128
+        y: 448
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f8ed22ffa50f4eb40800000000000000
-      internalID: 5468760121152822927
+      spriteID: 4b5f53de1687a894da9e6dcc314fab6f
+      internalID: 839295151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warrior attack 1_2
+      name: TX Tileset Ground_2
       rect:
         serializedVersion: 2
-        x: 1075
-        y: 472
-        width: 67
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 224
+        y: 448
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 059a2832f79fbcb60800000000000000
-      internalID: 7767576306782480720
+      spriteID: 4fa267853d9eab94990f63469d81f8a4
+      internalID: 973722611
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warrior attack 1_3
+      name: TX Tileset Ground_3
       rect:
         serializedVersion: 2
-        x: 1225
-        y: 472
-        width: 31
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 288
+        y: 480
+        width: 62
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 401c6799a2c79f700800000000000000
-      internalID: 574626949871616260
+      spriteID: 84d44e8a72061af4eb63807da7624632
+      internalID: 2135510691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Tileset Ground_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 96
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f7f88e19f2623b4e83d10e3e96e2e77
+      internalID: -2055156529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Tileset Ground_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 384
+        height: 416
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fd1f7ca46eb72d43872627a40691132
+      internalID: 2046627438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Tileset Ground_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 32
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d02b95bf9d90c24b93965ee35ca4a85
+      internalID: 1349049830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Tileset Ground_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 224
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c97bac792b1d824a9d9493b50473611
+      internalID: 2010464853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Tileset Ground_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 96
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51bd3dd296fa178459479a1e50e82db8
+      internalID: -390765012
       vertices: []
       indices: 
       edges: []
@@ -253,7 +373,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0faf60ff1f53c3e4684b96242021cd3b
     internalID: 0
     vertices: []
     indices: 
@@ -261,10 +381,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      warrior attack 1_0: 7293459347660958784
-      warrior attack 1_1: 5468760121152822927
-      warrior attack 1_2: 7767576306782480720
-      warrior attack 1_3: 574626949871616260
+      TX Tileset Ground_0: 904875089
+      TX Tileset Ground_1: 839295151
+      TX Tileset Ground_2: 973722611
+      TX Tileset Ground_3: 2135510691
+      TX Tileset Ground_4: -2055156529
+      TX Tileset Ground_5: 2046627438
+      TX Tileset Ground_6: 1349049830
+      TX Tileset Ground_7: 2010464853
+      TX Tileset Ground_8: -390765012
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
