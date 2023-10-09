@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
+
+    }
     public GameObject warrior;
     public float speed;
 
