@@ -3,9 +3,26 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class warrior : MonoBehaviour
 {
+    public LayerMask groundLayer;
+    bool IsGrounded()
+    {
+        Vector2 position = transform.position;
+        Vector2 direction = Vector2.down;
+        float distance = 1.0f;
+
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        if (hit.collider != null)
+        {
+            return true;
+        }
+
+        return false;
+    }
+    HelperScript helper;
     Rigidbody2D rb;
     Animator anim;	// ***
     SpriteRenderer spi;
@@ -19,19 +36,24 @@ public class warrior : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>(); // ***
         spi = GetComponent<SpriteRenderer>();
+        helper = gameObject.AddComponent<HelperScript>();
 
-        
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        int yMovement = (int)Input.GetAxisRaw("Vertical");
+        if (yMovement == 1)
+        {
+            Jump();
+        }
         anim.SetBool("run", false);
         anim.SetBool("jump", false);
         anim.SetBool("attack1", false);
         
-        float speed = 3f;
+        float speed = 1f;
         if (Input.GetKey("q") == true)
         {
             print("player pressed q");
@@ -66,22 +88,34 @@ public class warrior : MonoBehaviour
             anim.SetBool("run", true);
             spi.flipX = true;
         }
-        if(Input.GetKeyDown("w"))
-        {
-            rb.AddForce(new Vector3(0, 5, 0), ForceMode2D.Impulse);
-            anim.SetBool("jump", true);
-            
-            
-
-        }
+        
         if (Input.GetKey("f") == true)
         {
             print("player pressed f");
             anim.SetTrigger("attack1");
 
         }
+        void Jump()
+        {
+            if (!IsGrounded())
+            {
+                return;
+            }
+            else
+            {
+                if (Input.GetKeyDown("w"))
+                {
+                    rb.AddForce(new Vector3(0, 2, 0), ForceMode2D.Impulse);
+                    anim.SetBool("jump", true);
 
+
+
+                }
+            }
+        }
 
 
     }
+
 }
+

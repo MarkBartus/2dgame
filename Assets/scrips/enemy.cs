@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
+    HelperScript helper;
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Player")
@@ -12,6 +14,7 @@ public class enemy : MonoBehaviour
         }
 
     }
+
     public GameObject warrior;
     public float speed;
 
@@ -31,10 +34,10 @@ public class enemy : MonoBehaviour
 
     {
         print("start");
-
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>(); // ***
         spi = GetComponent<SpriteRenderer>();
+        helper = gameObject.AddComponent<HelperScript>();
     }
 
     // Update is called once per frame
@@ -47,5 +50,13 @@ public class enemy : MonoBehaviour
         transform.position = Vector2.MoveTowards(this.transform.position, warrior.transform.position, speed * Time.deltaTime);
         anim.SetBool("running", true);
 
+        if( Input.GetKey("space"))
+        {
+            helper.FlipObject(true); // this will execute the method in HelperScript.cs
+        }
+        if (Input.GetKey("h"))
+        {
+            helper.Write(true);
+        }
     }
 }
