@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HelperScript : MonoBehaviour
 {
-    public LayerMask groundLayer;
+    public LayerMask groundLayerMask;
     public void FlipObject(bool flip)
     {
         // get the SpriteRenderer component
@@ -19,15 +19,69 @@ public class HelperScript : MonoBehaviour
         {
             sr.flipX = false;
         }
-        
+
     }
-    public void Write(bool flip )
+    public void Write(bool flip)
     {
         if (flip == true)
         {
             print("Hello world");
         }
     }
-    
+    void Start()
+    {
+        groundLayerMask = LayerMask.GetMask("ground");
+    }
+    public bool DoRayCollisionCheck()
+    {
+        float rayLength = 0.1f; // length of raycast
 
+
+        //cast a ray downward 
+        RaycastHit2D hit;
+
+        hit = Physics2D.Raycast(transform.position, Vector2.down, rayLength, groundLayerMask);
+        Color hitColor = Color.white;
+
+
+
+        if (hit.collider != null)
+        {
+            print("Player has collided with Ground layer");
+            hitColor = Color.green;
+        }
+        Debug.DrawRay(transform.position, Vector2.down * rayLength, hitColor);
+        if (hit.collider != null)
+        {
+            return true;
+        }
+        return false;
+    }
+    public bool DoRayCollisionCheck1()
+    {
+        float rayLength = 0.1f; // length of raycast
+        Color hitColor1 = Color.green;
+
+        //cast a ray downward 
+
+        Vector3 rayoffset1 = new Vector3(-0.01f ,0.1f,0);
+        Vector3 rayoffset2 = new Vector3(0.01f, 0.1f,0);
+
+        RaycastHit2D hit1 = Physics2D.Raycast(transform.position + rayoffset1, Vector2.right, rayLength, groundLayerMask);       
+        RaycastHit2D hit2 = Physics2D.Raycast(transform.position + rayoffset2, Vector2.left, rayLength, groundLayerMask);
+        
+        
+
+        if (( hit1.collider != null) || (hit2.collider != null ))
+        {
+            hitColor1 = Color.red;
+            return true;
+        }
+        Debug.DrawRay(transform.position + rayoffset1, Vector2.left * rayLength, hitColor1 );
+        Debug.DrawRay(transform.position + rayoffset2, Vector2.right * rayLength, hitColor1);
+        return false;
+             
+
+        
+    }
 }

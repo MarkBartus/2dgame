@@ -576,7 +576,7 @@ GameObject:
   - component: {fileID: 789767289}
   - component: {fileID: 789767288}
   - component: {fileID: 789767287}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8344,11 +8344,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8739873369598538724, guid: de2d6d6ab1cfdc146b01db02d765bb4c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.12596
+      value: -6.123
       objectReference: {fileID: 0}
     - target: {fileID: 8739873369598538724, guid: de2d6d6ab1cfdc146b01db02d765bb4c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.476486
+      value: 1.44
       objectReference: {fileID: 0}
     - target: {fileID: 8739873369598538724, guid: de2d6d6ab1cfdc146b01db02d765bb4c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8609,6 +8609,10 @@ PrefabInstance:
     - target: {fileID: 4402408036468940268, guid: e1a9e60ab6bd85646bce1e84e0030bb2, type: 3}
       propertyPath: Grounded
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402408036468940268, guid: e1a9e60ab6bd85646bce1e84e0030bb2, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8908498783135036006, guid: e1a9e60ab6bd85646bce1e84e0030bb2, type: 3}
       propertyPath: m_LocalScale.x

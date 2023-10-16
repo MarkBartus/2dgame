@@ -7,21 +7,8 @@ using UnityEngine.UIElements;
 
 public class warrior : MonoBehaviour
 {
-    public LayerMask groundLayer;
-    bool IsGrounded()
-    {
-        Vector2 position = transform.position;
-        Vector2 direction = Vector2.down;
-        float distance = 1.0f;
-
-        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
-        if (hit.collider != null)
-        {
-            return true;
-        }
-
-        return false;
-    }
+    
+   
     HelperScript helper;
     Rigidbody2D rb;
     Animator anim;	// ***
@@ -37,18 +24,16 @@ public class warrior : MonoBehaviour
         anim = GetComponent<Animator>(); // ***
         spi = GetComponent<SpriteRenderer>();
         helper = gameObject.AddComponent<HelperScript>();
+        
 
 
     }
 
     // Update is called once per frame
+
     void Update()
     {
-        int yMovement = (int)Input.GetAxisRaw("Vertical");
-        if (yMovement == 1)
-        {
-            Jump();
-        }
+        
         anim.SetBool("run", false);
         anim.SetBool("jump", false);
         anim.SetBool("attack1", false);
@@ -95,24 +80,16 @@ public class warrior : MonoBehaviour
             anim.SetTrigger("attack1");
 
         }
-        void Jump()
+        if (helper.DoRayCollisionCheck())
         {
-            if (!IsGrounded())
+            if (Input.GetKeyDown("w"))
             {
-                return;
-            }
-            else
-            {
-                if (Input.GetKeyDown("w"))
-                {
-                    rb.AddForce(new Vector3(0, 2, 0), ForceMode2D.Impulse);
-                    anim.SetBool("jump", true);
+                rb.AddForce(new Vector3(0, 2, 0), ForceMode2D.Impulse);
+                anim.SetBool("jump", true);
 
-
-
-                }
             }
         }
+        
 
 
     }
