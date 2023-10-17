@@ -7,6 +7,7 @@ public class enemy : MonoBehaviour
 {
     public LayerMask groundLayerMask;
     HelperScript helper;
+    public float safeDistance = 20f;
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Player")
@@ -44,15 +45,15 @@ public class enemy : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {     
-            anim.SetBool("running", true);
-            distance = Vector2.Distance(transform.position, warrior.transform.position);
-            Vector2 direction = warrior.transform.position - transform.position;
+    {           
+        anim.SetBool("running", true);
+        distance = Vector2.Distance(transform.position, warrior.transform.position);
+        Vector2 direction = warrior.transform.position - transform.position;
 
-            transform.position = Vector2.MoveTowards(this.transform.position, warrior.transform.position, speed * Time.deltaTime);
-            anim.SetBool("running", true);
+        transform.position = Vector2.MoveTowards(this.transform.position, warrior.transform.position, speed * Time.deltaTime);
+        anim.SetBool("running", true);
         
-        if( Input.GetKey("space"))
+        if ( Input.GetKey("space"))
         {
             helper.FlipObject(true); // this will execute the method in HelperScript.cs
         }
@@ -60,10 +61,29 @@ public class enemy : MonoBehaviour
         {
             helper.Write(true);
         }
+        
+        Vector3 rayoffset1 = new Vector3(-0.01f, 0.1f, 0);
+        Vector3 rayoffset2 = new Vector3(0.01f, 0.1f, 0);
+        
+        bool hitleft;
+        bool hitright;
+
+        hitleft = helper.ExtendedRayCollisionCheck(0.06f , 0);
+        hitright = helper.ExtendedRayCollisionCheck(-0.06f, 0);
+
+        transform.position = new Vector2(transform.position.x + (speed * Time.deltaTime), transform.position.y);
+
+        if (hitleft)
+        {
+            spi.flipX = true;
+        }
+        if (hitright)
+        {
+            spi.flipX = false;
+        }
 
 
-
-
+        /*
         float rayLength = 0.1f; // length of raycast
         Color hitColor1 = Color.green;
 
@@ -93,6 +113,9 @@ public class enemy : MonoBehaviour
         {
             spi.flipX = true;
         }
+        */
+      
+        
     }
     
 }
